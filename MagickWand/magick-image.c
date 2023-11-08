@@ -650,14 +650,14 @@ WandExport MagickBooleanType MagickAnimateImages(MagickWand *wand,
   const char *server_name)
 {
   MagickBooleanType
-    status;
+    status = MagickFalse;
 
   assert(wand != (MagickWand *) NULL);
   assert(wand->signature == MagickWandSignature);
   if (wand->debug != MagickFalse)
     (void) LogMagickEvent(WandEvent,GetMagickModule(),"%s",wand->name);
   (void) CloneString(&wand->image_info->server_name,server_name);
-  status=AnimateImages(wand->image_info,wand->images,wand->exception);
+  //status=AnimateImages(wand->image_info,wand->images,wand->exception);
   return(status);
 }
 
@@ -2910,7 +2910,7 @@ WandExport MagickBooleanType MagickDisplayImage(MagickWand *wand,
     *image;
 
   MagickBooleanType
-    status;
+    status = MagickFalse;
 
   assert(wand != (MagickWand *) NULL);
   assert(wand->signature == MagickWandSignature);
@@ -2922,7 +2922,7 @@ WandExport MagickBooleanType MagickDisplayImage(MagickWand *wand,
   if (image == (Image *) NULL)
     return(MagickFalse);
   (void) CloneString(&wand->image_info->server_name,server_name);
-  status=DisplayImages(wand->image_info,image,wand->exception);
+  //status=DisplayImages(wand->image_info,image,wand->exception);
   image=DestroyImage(image);
   return(status);
 }
@@ -2956,14 +2956,14 @@ WandExport MagickBooleanType MagickDisplayImages(MagickWand *wand,
   const char *server_name)
 {
   MagickBooleanType
-    status;
+    status = MagickFalse;
 
   assert(wand != (MagickWand *) NULL);
   assert(wand->signature == MagickWandSignature);
   if (wand->debug != MagickFalse)
     (void) LogMagickEvent(WandEvent,GetMagickModule(),"%s",wand->name);
   (void) CloneString(&wand->image_info->server_name,server_name);
-  status=DisplayImages(wand->image_info,wand->images,wand->exception);
+  //status=DisplayImages(wand->image_info,wand->images,wand->exception);
   return(status);
 }
 
@@ -10522,7 +10522,7 @@ WandExport MagickBooleanType MagickSetImageFilename(MagickWand *wand,
 %
 %    o wand: the magick wand.
 %
-%    o filter: Bartlett, Blackman, Bohman, Box, Catrom, Cosine, Cubic, 
+%    o filter: Bartlett, Blackman, Bohman, Box, Catrom, Cosine, Cubic,
 %      CubicSpline, Gaussian, Hamming, Hann, Hermite, Jinc, Kaiser, Lagrange,
 %      Lanczos, Lanczos2, Lanczos2Sharp, LanczosRadius, LanczosSharp, Mitchell,
 %      Parzen, Point, Quadratic, Robidoux, RobidouxSharp, Sinc, SincFast,
